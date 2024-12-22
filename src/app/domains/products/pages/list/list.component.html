@@ -1,32 +1,5 @@
 <div class="grid grid-cols-3 gap-4">
-  <app-product
-    [title]="'Product 1'"
-    [price]="12"
-    [img]="'https://picsum.photos/640/640?r=23'"
-    (addToCart)="fromChild($event)"
-  />
-  <app-product
-    [title]="'Product 2'"
-    [price]="120"
-    [img]="'https://picsum.photos/640/640?r=25'"
-    (addToCart)="fromChild($event)"
-  />
-  <app-product
-    [title]="'Product 3'"
-    [price]="12"
-    [img]="'https://picsum.photos/640/640?r=28'"
-    (addToCart)="fromChild($event)"
-  />
-  <app-product
-    [title]="'Product 1'"
-    [price]="12"
-    [img]="'https://picsum.photos/640/640?r=29'"
-    (addToCart)="fromChild($event)"
-  />
-  <app-product
-    [title]="'Product 1'"
-    [price]="12"
-    [img]="'https://picsum.photos/640/640?r=90'"
-    (addToCart)="fromChild($event)"
-  />
+  @for(product of products(); track product.id; let i=$index){
+  <app-product [product]="product" (addToCart)="fromChild($event)" />
+  }
 </div>

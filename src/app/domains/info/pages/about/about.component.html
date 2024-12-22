@@ -1,15 +1,17 @@
-<div class="px-10">
-  <h1 class="text-3xl font-bold">About</h1>
-  <p class="text-xs">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus dolor
-    delectus sint necessitatibus nobis ut, deserunt error quasi et atque unde
-    nam fugit labore, aut dignissimos quibusdam incidunt fugiat praesentium!
+<div class="px-16">
+  <h1 class="text-lg font-bold">About</h1>
+  <p class="text-sm">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia porro vel
+    ratione nesciunt, nostrum inventore perferendis voluptas amet dolorem
+    magnam! Accusamus non itaque, reprehenderit dolore laboriosam ea porro
+    molestiae tempore.
   </p>
-  <p class="text-xs">Numero de clientes</p>
-  @if(duration() > 0){
-  <app-counter [duration]="duration()" [message]="message()"></app-counter>
-  }
-</div>
-<div>
-  <app-wave-audio audioUrl="audio.mp3"></app-wave-audio>
+  <p class="p-5 text-xs">
+    Numero de Visitas @if(duration() > 0){
+    <app-counter [duration]="duration()" [message]="message()"></app-counter>
+    }
+  </p>
+  <div>
+    <app-wave-audio audioUrl="audio.mp3"></app-wave-audio>
+  </div>
 </div>
