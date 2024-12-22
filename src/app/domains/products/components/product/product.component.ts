@@ -12,7 +12,7 @@ export class ProductComponent {
   @Input({required: true}) title = '';
 
   @Output() addToCart = new EventEmitter();
-  addTOCartHandler() {
+  addToCartHandler() {
     console.log('click from Child');
     this.addToCart.emit(
       'Hola este es un mensaje desde el hijo '+ this.title
