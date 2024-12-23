@@ -65,9 +65,9 @@
 
 <div
   id="drawer-cart"
-  class="fixed top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform bg-white"
+  class="fixed top-0 right-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform bg-white"
   tabindex="-1"
-  [class.-translate-x-full]="hideSideMenu()"
+  [class.translate-x-full]="hideSideMenu()"
   aria-labelledby="drawer-cart-label"
 >
   <h5
@@ -102,7 +102,7 @@
     @for( product of cart(); track product.id; let i=$index){
     <div class="flex justify-between items-center space-y-2">
       <div class="flex space-x-2 items-center">
-        <img class="w-6 h-6" [src]="product.img" [alt]="product.title" />
+        <img class="w-6 h-6" [src]="product.images[0]" [alt]="product.title" />
         <h3>{{ product.title }}</h3>
       </div>
       <p>{{ product.price }}</p>
