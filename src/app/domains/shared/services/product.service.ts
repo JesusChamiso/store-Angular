@@ -10,8 +10,9 @@ export class ProductService {
 
   private http = inject(HttpClient);
   private apiUrlProducts = 'https://api.escuelajs.co/api/v1/products';
+  // private apiUrlProducts = 'https://react-shop-backend.liara.run/products';
 
-  getProducts() {
+  getProducts(category?:string) {
     // aqui se puede retirar el pipe() si el servicio de API tiene el campo createdAt, en este caso como no Lo tiene se agrega uno aleatorio
     // return this.http.get<Product[]>(this.apiUrlProducts).pipe(
     //   map((products) => 
@@ -22,7 +23,11 @@ export class ProductService {
     //       })
     //   ))
     // );
-    return this.http.get<Product[]>(this.apiUrlProducts);
+    const url = new URL(this.apiUrlProducts);
+    if (category) {
+      url.searchParams.set('categoryId', category);
+    }
+    return this.http.get<Product[]>(url.toString());
   }
 
   // getRandomDate(start: Date,end: Date):string {
