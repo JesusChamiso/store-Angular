@@ -25,10 +25,10 @@ export class ProductService {
     return this.http.get<Product[]>(this.apiUrlProducts);
   }
 
-  getRandomDate(start: Date,end: Date):string {
-    const randomTime = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-    return randomTime.toISOString();
-  }
+  // getRandomDate(start: Date,end: Date):string {
+  //   const randomTime = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+  //   return randomTime.toISOString();
+  // }
 
   getOne(id:number) {
     return this.http.get<Product>(this.apiUrlProducts+`/${id}`);
