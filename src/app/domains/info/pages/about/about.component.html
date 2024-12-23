@@ -1,23 +1,20 @@
-<div class="container mx-auto">
-  <app-header></app-header>
+<div>
+  <h1 class="text-lg font-bold">About</h1>
+  <p class="text-base">
+    Lorem ipsum dolor sit
+    <span appHighlight
+      >amet consectetur adipisicing elit. Mollitia porro vel ratione</span
+    >
+    nesciunt, nostrum inventore perferendis voluptas amet dolorem magnam!
+    Accusamus non itaque, reprehenderit dolore laboriosam ea porro molestiae
+    tempore.
+  </p>
+  <p class="text-base">
+    Numero de Visitas @if(duration() > 0){
+    <app-counter [duration]="duration()" [message]="message()"></app-counter>
+    }
+  </p>
   <div>
-    <h1 class="text-lg font-bold">About</h1>
-    <p class="text-base">
-      Lorem ipsum dolor sit
-      <span appHighlight
-        >amet consectetur adipisicing elit. Mollitia porro vel ratione</span
-      >
-      nesciunt, nostrum inventore perferendis voluptas amet dolorem magnam!
-      Accusamus non itaque, reprehenderit dolore laboriosam ea porro molestiae
-      tempore.
-    </p>
-    <p class="text-base">
-      Numero de Visitas @if(duration() > 0){
-      <app-counter [duration]="duration()" [message]="message()"></app-counter>
-      }
-    </p>
-    <div>
-      <app-wave-audio audioUrl="audio.mp3"></app-wave-audio>
-    </div>
+    <app-wave-audio audioUrl="audio.mp3"></app-wave-audio>
   </div>
 </div>
