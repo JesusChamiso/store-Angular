@@ -40,7 +40,7 @@
         <div
           class="absolute -bottom-2 -right-2 rounded h-5 w-5 bg-black text-white text-xs"
         >
-          {{ cart.length }}
+          {{ cart().length }}
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +99,7 @@
     <span class="sr-only">Close Cart</span>
   </button>
   <div class="py-4 overflow-y-auto">
-    @for( product of cart; track product.id; let i=$index){
+    @for( product of cart(); track product.id; let i=$index){
     <div class="flex justify-between items-center space-y-2">
       <div class="flex space-x-2 items-center">
         <img class="w-6 h-6" [src]="product.img" [alt]="product.title" />
