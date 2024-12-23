@@ -5,5 +5,5 @@ export interface Product{
   description: string,
   images:string[],
   category:number,
-  createdAt?:string
+  createdAt:string
 }
