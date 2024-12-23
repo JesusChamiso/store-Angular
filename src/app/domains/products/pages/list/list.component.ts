@@ -13,7 +13,7 @@ import { ProductService } from '@shared/services/product.service';
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
-export class ListComponent implements OnInit, OnChanges {
+export default class ListComponent implements OnInit, OnChanges {
   products = signal<Product[]>([]);
   categories = signal<Category[]>([]);
   @Input() category? :string = '';
@@ -25,6 +25,7 @@ export class ListComponent implements OnInit, OnChanges {
   ngOnChanges() {
     this.getProducts();
   }
+
   ngOnInit() {
     this.getCategories();
   }
